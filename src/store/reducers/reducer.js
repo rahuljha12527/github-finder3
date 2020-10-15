@@ -1,4 +1,11 @@
-const initState={};
+const initState={
+    username:"",
+    repos:"",
+    following:"",
+    followers:"",
+    message:"",
+    grapppedData:false
+};
   
 const reducer=(state=initState,action)=>{
    return state;
