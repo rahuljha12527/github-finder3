@@ -23,7 +23,7 @@ const reducer = (state = initState, action) => {
       followers: action.data.followers,
       image_url: action.data.avatar_url,
       repos: action.data.public_repos,
-      grapppedData:true
+      grapppedData:true 
     };
   }
 

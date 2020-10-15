@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as  actionCreator from '../store/actions/action';
+import ShowProfile from "./ShowProfile";
 
 const Api = props => {
   const handleUsername = e => {
@@ -10,6 +11,10 @@ const Api = props => {
   const handleSubmit=(e)=>{
      props.getUserData(e,props.username);
 
+  }
+
+  if(props.grapppedData==true){
+      return <ShowProfile/>
   }
   return (
     <div>
