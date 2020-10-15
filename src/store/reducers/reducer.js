@@ -8,6 +8,13 @@ const initState={
 };
   
 const reducer=(state=initState,action)=>{
+    if(action.type==="CHANGE"){
+        let currentUsername=action.e.target.value;
+        return {
+            ...state,
+            username:currentUsername
+        };
+    }
    return state;
 }
 
