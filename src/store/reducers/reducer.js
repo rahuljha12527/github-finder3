@@ -12,9 +12,16 @@ const reducer=(state=initState,action)=>{
         let currentUsername=action.e.target.value;
         return {
             ...state,
-            username:currentUsername
+            username:currentUsername 
         };
+    } else if(action.type==='SUBMIT'){
+        console.log(action.data);
+        return {
+            ...state,
+
+        }
     }
+
    return state;
 }
 

@@ -6,6 +6,11 @@ const Api = props => {
   const handleUsername = e => {
     props.changeUsername(e);
   };
+
+  const handleSubmit=(e)=>{
+     props.getUserData(e,props.username);
+
+  }
   return (
     <div>
       <input
@@ -14,7 +19,7 @@ const Api = props => {
         onChange={handleUsername}
       />
       <br />
-      <button>Search</button>
+      <button onClick={handleSubmit}>Search</button>
     </div>
   );
 };
@@ -32,7 +37,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchedToProps = (dispatch) => {
   return {
-      changeUsername:e=>dispatch(actionCreator.changeUsername(e))
+      changeUsername:e=>dispatch(actionCreator.changeUsername(e)),
+      getUserData:(e,username)=>dispatch(actionCreator.getUserData(e,username))
   };
 };
 
