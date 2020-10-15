@@ -20,6 +20,7 @@ const Api = props => {
       />
       <br />
       <button onClick={handleSubmit}>Search</button>
+         <h3>{props.repos}</h3>
     </div>
   );
 };
