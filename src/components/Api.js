@@ -14,7 +14,7 @@ const Api = props => {
 
   }
 
-  if(props.grapppedData==true){
+  if(props.grapppedData===true){
       return <ShowProfile/>
   }
   return (
