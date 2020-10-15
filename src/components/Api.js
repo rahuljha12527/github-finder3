@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as  actionCreator from '../store/actions/action';
 import ShowProfile from "./ShowProfile";
+import "../App.css"; 
 
 const Api = props => {
   const handleUsername = e => {
@@ -17,12 +18,17 @@ const Api = props => {
       return <ShowProfile/>
   }
   return (
-    <div>
+    <div id="form-data">
+        <h2>{props.message}</h2>
+        <br/>
+        <br/>
       <input
         type="text"
         placeholder="Enter Github UserName."
         onChange={handleUsername}
+        id="username"
       />
+      <br />
       <br />
       <button onClick={handleSubmit}>Search</button>
          <h3>{props.repos}</h3>
@@ -38,6 +44,7 @@ const mapStateToProps = (state) => {
     followers: state.followers,
     message: state.message,
     grapppedData: state.grapppedData,
+    image_url:state.image_url
   };
 };
 

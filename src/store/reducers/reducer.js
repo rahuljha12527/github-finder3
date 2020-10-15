@@ -17,14 +17,23 @@ const reducer = (state = initState, action) => {
     };
   } else if (action.type === "SUBMIT") {
     console.log(action.data);
-    return {
-      ...state,
-      following: action.data.following,
-      followers: action.data.followers,
-      image_url: action.data.avatar_url,
-      repos: action.data.public_repos,
-      grapppedData:true 
-    };
+
+    if (action.data.public_repos) {
+      return {
+        ...state,
+        following: action.data.following,
+        followers: action.data.followers,
+        image_url: action.data.avatar_url,
+        repos: action.data.public_repos,
+        grapppedData: true,
+      };
+    }  else{
+        return {
+            ...state,
+            message:"User not Found",
+
+        }
+    }
   }
 
   return state;
